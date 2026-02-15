@@ -1,0 +1,24 @@
+[Unit]
+Description=ipkit IP information service
+After=network.target
+
+[Service]
+Type=simple
+User=ipkit
+Group=ipkit
+Environment=IPKIT_MMDB_COUNTRY=/var/lib/ipkit/db/GeoLite2-Country.mmdb
+Environment=IPKIT_MMDB_CITY=/var/lib/ipkit/db/GeoLite2-City.mmdb
+Environment=IPKIT_MMDB_ASN=/var/lib/ipkit/db/GeoLite2-ASN.mmdb
+Environment=IPKIT_LISTEN_ADDR=127.0.0.1:8080
+Environment=IPKIT_CACHE_TTL=300s
+Environment=IPKIT_RATE_LIMIT_PER_MIN=120
+ExecStart=/usr/local/bin/ipkit
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

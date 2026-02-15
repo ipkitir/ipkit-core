@@ -1,0 +1,4 @@
+export IPKIT_MMDB_COUNTRY=/var/lib/ipkit/db/GeoLite2-Country.mmdb
+export IPKIT_MMDB_CITY=/var/lib/ipkit/db/GeoLite2-City.mmdb
+export IPKIT_MMDB_ASN=/var/lib/ipkit/db/GeoLite2-ASN.mmdb
+export IPKIT_LISTEN_ADDR=":8088"
